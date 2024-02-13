@@ -20,6 +20,7 @@ if ! command -v xenv &> /dev/null; then
   function xenv() {
     if ! [ -f .env ]; then 
       echo "No .env file found!" 1>&2
+      return 1
     fi
 
     local -a vars=()
